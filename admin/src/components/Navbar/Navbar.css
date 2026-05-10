@@ -3,6 +3,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 8px 4%;
+    transition: background .18s ease, box-shadow .18s ease, transform .18s ease;
 }
 .navbar .logo{
     width: max(10%,80px);
@@ -12,4 +13,6 @@
 }
 .login-conditon{
     font-size: 20px;
+    cursor: pointer;
+    color: var(--text);
 }

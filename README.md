@@ -127,4 +127,8 @@ Just raise an issue, and we will discuss it.
 
 ## Feedback
 
+<<<<<<< HEAD
 If you have any feedback, please reach out to me [here](https://www.linkedin.com/in/sarthaktyagi2236999)
+=======
+If you have any feedback, please reach out to me [here]([https://www.linkedin.com/in/sarthaktyagi2236999)
+>>>>>>> b226640939f8a91562e7dfa5bc0c2d4b5bb398de

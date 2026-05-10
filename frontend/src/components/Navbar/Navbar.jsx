@@ -17,7 +17,7 @@ const Navbar = ({ setShowLogin }) => {
     navigate("/");
   }
   return (
-    <div className="navbar">
+    <div className="navbar fade-down">
       <Link to="/">
         <img src={assets.logo} alt="" className="logo" />
       </Link>

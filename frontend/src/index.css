@@ -1,29 +1,114 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 
+:root {
+  --font: 'Outfit', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --primary: #ff6b35;
+  --primary-rgb: 255,107,53;
+  --accent: #ff8a50;
+  --bg: #f6f7fb;
+  --surface: #ffffff;
+  --text: #1f2b46;
+  --muted: #6b7280;
+  --radius: 12px;
+  --shadow-1: 0 8px 24px rgba(31,43,70,0.06);
+  --shadow-2: 0 12px 50px rgba(31,43,70,0.08);
+}
+
 *{
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: Outfit;
+  font-family: var(--font);
   scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
 body{
   min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 16px;
+  line-height: 1.5;
 }
+
 a{
   text-decoration: none;
   color: inherit;
 }
+
+button, input, select, textarea {
+  font-family: inherit;
+  transition: all 180ms ease;
+}
+
 .app{
-  width: 80%;
-  margin: auto;
+  width: min(1200px, 90%);
+  margin: 32px auto;
+  padding-bottom: 20px;
+}
+
+.container{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.card{
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-1);
+  padding: 16px;
+}
+
+.btn{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 9px;
+  cursor: pointer;
+  box-shadow: var(--shadow-1);
+}
+
+button{
+  border-radius: 8px;
+}
+
+.fade-in {
+  animation: fadeIn .5s ease both;
+}
+.fade-up {
+  animation: fadeUp .56s cubic-bezier(.2,.9,.2,1) both;
+}
+.fade-down {
+  animation: fadeDown .48s ease both;
+}
+.stagger-children > * {
+  opacity: 0;
+  transform: translateY(8px);
+  animation: fadeUp .5s ease both;
+  animation-delay: calc(var(--stagger-index, 0) * 80ms);
 }
 
 @keyframes fadeIn{
-  0%{
-    opacity: 0;
-  }
-  100%{
-    opacity: 1;
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes fadeUp{
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeDown{
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-in, .fade-up, .fade-down, .stagger-children > * {
+    animation: none !important;
   }
 }
